@@ -1,0 +1,70 @@
+h1 {
+  text-align: center;
+  margin: 50px;
+}
+
+#topbar {
+  height: 150px;
+  width: 80%;
+  background-color: cornflowerblue;
+  margin: 0 auto;
+  line-height: 150px;
+  bottom-border: 25px;
+}
+#container {
+  height: 800px;
+  width: 80%;
+  margin: 0 auto;
+  background-color: cornflowerblue;
+}
+#t {
+  height: 33%;
+  width: 100%;
+}
+#c {
+  height: 33%;
+  width: 100%;
+}
+#b {
+  height: 33%;
+  width: 100%;
+}
+.tiles {
+  height: 75%;
+  width: 23%;
+  margin: 0 auto;
+  float: left;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  border-radius: 3.5%;
+    background-color: #8AC007;
+    padding: 3%;
+}
+.piece {
+  font-family: fantasy;
+  text-align: center;
+  margin-top: 20%;
+  font-size: 100px;
+}
+#board {
+  height: 100%;
+  width: 80%;
+  background-color: lightslategrey;
+  margin: 0 auto;
+  margin-left: 10%;
+  margin-right: 10%;
+  float: left;
+}
+#bottombar{
+  height: 150px;
+  width: 80%;
+  background-color: cornflowerblue;
+  margin: 0 auto;
+  top-border: 25px;
+}
+
+#clicked {
+  background-color: green;
+}
