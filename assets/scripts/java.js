@@ -81,6 +81,12 @@ var changeTurn = function() {
   turn = (turn === "X" ? "O" : "X");
 };
 
+var getWinner = function() {
+
+  if (((board[0] === "X" && board[1] === "X" && board[2] === "X") || (board[3] === "X" && board[4] === "X" && board[5] === "X") || (board[6] === "X" && board[7] === "X" && board[8] === "X")) || ((board[0] === "X" && board[3] === "X" && board[6] === "X") || (board[1] === "X" && board[4] === "X" && board[7] === "X") || (board[2] === "X" && board[5] === "X" && board[8] === "X")) || ((board[0] === "X" && board[4] === "X" && board[8] === "X") || (board[2] === "X" && board[4] === "X" && board[6] === "X")))
+    alert("Congratulations Player X, you've won!")
+  }
+
 var clickHandler = function () {
   var $tile = $(this);
 
