@@ -1,10 +1,23 @@
 h1 {
   text-align: center;
-  margin: 50px;
+  font: 150px;
+  font-family: 'Dosis', sans-serif;
+  margin-bottom: 90px;
+}
+
+h2 {
+  text-align: center;
+  margin: 0 auto;
+  font-family: 'Dosis', sans-serif;
+}
+
+#scoreboard {
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 #topbar {
-  height: 150px;
+  height: 100px;
   width: 80%;
   background-color: cornflowerblue;
   margin: 0 auto;
@@ -17,18 +30,11 @@ h1 {
   margin: 0 auto;
   background-color: cornflowerblue;
 }
-#t {
-  height: 33%;
+.row {
+  height: 30%;
   width: 100%;
 }
-#c {
-  height: 33%;
-  width: 100%;
-}
-#b {
-  height: 33%;
-  width: 100%;
-}
+
 .tiles {
   height: 75%;
   width: 23%;
@@ -45,26 +51,14 @@ h1 {
 .piece {
   font-family: fantasy;
   text-align: center;
-  margin-top: 20%;
   font-size: 100px;
 }
 #board {
-  height: 100%;
+  height: 80%;
   width: 80%;
   background-color: lightslategrey;
   margin: 0 auto;
   margin-left: 10%;
   margin-right: 10%;
   float: left;
-}
-#bottombar{
-  height: 150px;
-  width: 80%;
-  background-color: cornflowerblue;
-  margin: 0 auto;
-  top-border: 25px;
-}
-
-#clicked {
-  background-color: green;
 }
