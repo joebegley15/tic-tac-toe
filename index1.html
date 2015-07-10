@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
   <head>
     <title>Some Site</title>
@@ -10,13 +10,16 @@
       <h1 id="href"> Tic-Tac Toe </h1>
     </div>
     <div id="container">
+      <div id="inputs">
+        <button id="start">Here's a big ugly pink button. Let's play some Tic-Tac-Toe</button>
+      </div>
       <div id="board">
         <div class="row">
           <div id="0" class="tiles">
           </div>
           <div id="1" class="tiles">
           </div>
-          <div id="2" class="tiles" class="r">
+          <div id="2" class="tiles">
           </div>
         </div>
         <div class="row">
@@ -36,13 +39,15 @@
           </div>
         </div>
         <div id="scoreboard">
-          <h2 id="scoreboardX">Player X Score: </h2>
-          <h2 id="scoreboardO">Player O Score: </h2>
+          <h2 id="scoreboardX">
+          $playerOne :
+          </h2>
+          <h2 id="scoreboardO"> $playerTwo : </h2>
         </div>
       </div>
     </div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="assets/scripts/java.js"></script>
+    <script type="text/javascript" src="assets/scripts/game.js"></script>
   </body>
 </html>
 

@@ -1,6 +1,5 @@
 'use strict'
 
-$('#board').hide();
 
 var board = [null, null, null, null, null, null, null, null, null];
 
@@ -53,53 +52,96 @@ var getTie = function() {
   }
 };
 
-var getWinnerX = function() {
+// var getWinnerX = function() {
+//   if (((board[0] === "X" && board[1] === "X" && board[2] === "X") ||
+//        (board[3] === "X" && board[4] === "X" && board[5] === "X") ||
+//        (board[6] === "X" && board[7] === "X" && board[8] === "X")) ||
+//       ((board[0] === "X" && board[3] === "X" && board[6] === "X") ||
+//        (board[1] === "X" && board[4] === "X" && board[7] === "X") ||
+//        (board[2] === "X" && board[5] === "X" && board[8] === "X")) ||
+//       ((board[0] === "X" && board[4] === "X" && board[8] === "X") ||
+//        (board[2] === "X" && board[4] === "X" && board[6] === "X"))) {
+//     winCountX++;
+//     $('#scoreboardX').html("Player X Score: " + winCountX);
+//     alert("Congratulations Player X, you've won!");
+//     boardReset();
+//     turnCounter = 0;
+//   }
+// }
 
-  if (((board[0] === "X" && board[1] === "X" && board[2] === "X") || (board[3] === "X" && board[4] === "X" && board[5] === "X") || (board[6] === "X" && board[7] === "X" && board[8] === "X")) || ((board[0] === "X" && board[3] === "X" && board[6] === "X") || (board[1] === "X" && board[4] === "X" && board[7] === "X") || (board[2] === "X" && board[5] === "X" && board[8] === "X")) || ((board[0] === "X" && board[4] === "X" && board[8] === "X") || (board[2] === "X" && board[4] === "X" && board[6] === "X"))) {
-    winCountX++;
-    $('#scoreboardX').html("Player X Score: " + winCountX);
-    alert("Congratulations Player X, you've won!");
+// var getWinnerO = function() {
+//   if (((board[0] === "O" && board[1] === "O" && board[2] === "O") ||
+//       (board[3] === "O" && board[4] === "O" && board[5] === "O") ||
+//       (board[6] === "O" && board[7] === "O" && board[8] === "O")) ||
+//      ((board[0] === "O" && board[3] === "O" && board[6] === "O") ||
+//       (board[1] === "O" && board[4] === "O" && board[7] === "O") ||
+//       (board[2] === "O" && board[5] === "O" && board[8] === "O")) ||
+//      ((board[0] === "O" && board[4] === "O" && board[8] === "O") ||
+//       (board[2] === "O" && board[4] === "O" && board[6] === "O"))) {
+//     winCountO++;
+//     $('#scoreboardO').html("Player O Score: " + winCountO);
+//     alert("Congratulations Player O, you've won!");
+//     boardReset();
+//     turnCounter = 0;
+//   }
+// }
+
+// isWinner("O")
+var isWinner = function(player) { //player will be either "O" or "X"
+  if (((board[0] === player && board[1] === player && board[2] === player) ||
+      (board[3] === player && board[4] === player && board[5] === player) ||
+      (board[6] === player && board[7] === player && board[8] === player)) ||
+     ((board[0] === player && board[3] === player && board[6] === player) ||
+      (board[1] === player && board[4] === player && board[7] === player) ||
+      (board[2] === player && board[5] === player && board[8] === player)) ||
+     ((board[0] === player && board[4] === player && board[8] === player) ||
+      (board[2] === player && board[4] === player && board[6] === player))) {
+    if (player === "O") {
+      winCountO++;
+      $('#scoreboardO').html("Player O Score: " + winCountO);
+      alert("Congratulations Player O, you've won!");
+    } else {
+      winCountX++;
+      $('#scoreboardX').html("Player X Score: " + winCountX);
+      alert("Congratulations Player X, you've won!");
+    }
     boardReset();
     turnCounter = 0;
   }
 }
 
-var getWinnerO = function() {
-  if (((board[0] === "O" && board[1] === "O" && board[2] === "O") || (board[3] === "O" && board[4] === "O" && board[5] === "O") || (board[6] === "O" && board[7] === "O" && board[8] === "O")) || ((board[0] === "O" && board[3] === "O" && board[6] === "O") || (board[1] === "O" && board[4] === "O" && board[7] === "O") || (board[2] === "O" && board[5] === "O" && board[8] === "O")) || ((board[0] === "O" && board[4] === "O" && board[8] === "O") || (board[2] === "O" && board[4] === "O" && board[6] === "O"))) {
-    winCountO++;
-    $('#scoreboardO').html("Player O Score: " + winCountO);
-    alert("Congratulations Player O, you've won!");
-    boardReset();
-    turnCounter = 0;
-  }
-}
-
-var clickHandler = function () {
+var tileClick = function () {
   var $tile = $(this);
   var arrayIdentifier = $tile.attr('id')
   if (board[arrayIdentifier] === null) {
     changePiece($tile);
     changeColor($tile);
     changeTile($tile);
+    isWinner("X");
+    isWinner("O");
     changeTurn();
-    getWinnerX();
-    getWinnerO();
-    getTie();
     turnCounter++;
-
+    getTie();
   } else {
-  alert("FUCK OFF")
+    alert("FUCK OFF")
   }
 };
 
 $(document).ready(function(){
+  $('#board').hide();
   var $tiles = $(".tiles");
+  var $PlayerOne = $('#playerone').val();
+  var $playerTwo = $('#playertwo').val();
 
+  $tiles.on("click", tileClick);
 
-  $tiles.on("click", clickHandler);
+  $('#start').on("click", function() {
+    $('#board').show();
+    $('#inputs').hide();
+  });
 
-  $('#scoreboardX').html("Player X Score: " + winCountX);
-  $('#scoreboardO').html("Player O Score: " + winCountO);
+  $('#scoreboardX').html("Player One: " + winCountX);
+  $('#scoreboardO').html("Player Two: " + winCountO);
   $(function() {
     'use strict';
     var gameWatcher;

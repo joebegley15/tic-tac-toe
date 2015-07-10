@@ -1,6 +1,6 @@
 h1 {
   text-align: center;
-  font: 150px;
+  font-size: 50px;
   font-family: 'Dosis', sans-serif;
   margin-bottom: 90px;
 }
@@ -9,6 +9,15 @@ h2 {
   text-align: center;
   margin: 0 auto;
   font-family: 'Dosis', sans-serif;
+}
+
+#start {
+  width: 400px;
+  background-color: pink;
+  height: 300px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 50px;
+  margin: 0 auto;
 }
 
 #scoreboard {
@@ -22,7 +31,7 @@ h2 {
   background-color: cornflowerblue;
   margin: 0 auto;
   line-height: 150px;
-  bottom-border: 25px;
+  border-bottom: 25px;
 }
 #container {
   height: 800px;
