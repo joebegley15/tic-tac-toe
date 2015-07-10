@@ -1,5 +1,7 @@
 'use strict'
 
+$('#board').hide();
+
 var board = [null, null, null, null, null, null, null, null, null];
 
 var turn = "X";
