@@ -123,7 +123,7 @@ var tileClick = function () {
     turnCounter++;
     getTie();
   } else {
-    alert("FUCK OFF")
+    alert("Tile is taken!")
   }
 };
 
